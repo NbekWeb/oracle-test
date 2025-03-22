@@ -11,7 +11,9 @@ import card2 from '@/assets/svg/card2.svg'
 import card3 from '@/assets/svg/card3.svg'
 import card4 from '@/assets/svg/card4.svg'
 
-@Component
+@Component({
+  components: {},
+})
 export default class BannerCards extends Vue {
   cards = [card1, card2, card3, card4]
 }
@@ -28,4 +30,4 @@ export default class BannerCards extends Vue {
     width: 133px;
   }
 }
-</style>  
+</style>
