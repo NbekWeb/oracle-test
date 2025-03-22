@@ -242,6 +242,7 @@ export default class DashboardPage extends Vue {
   }
   .scan-btn {
     height: 44px;
+    width: 100%;
     background: transparent;
     margin-top: 24px;
     margin-bottom: 12px;
@@ -251,6 +252,7 @@ export default class DashboardPage extends Vue {
     display: flex;
     gap: 8px;
     align-items: center;
+    justify-content: center;
     img {
       width: 20px;
       height: auto;
@@ -454,6 +456,8 @@ export default class DashboardPage extends Vue {
     padding: 0 12px 12px 12px;
 
     .crypto-btn {
+      width: 100%;
+      height: 48px;
       background: #f64e2a;
       color: #fff;
       font-family: 'Kenyan Coffee';
