@@ -47,15 +47,7 @@ export default class ScoreCards extends Vue {
             ;(slide as HTMLElement).style.transform = 'scale(1)'
             ;(slide as HTMLElement).style.zIndex = '1'
           })
-          let activeSlide
-          if (
-            this?.slides &&
-            this?.slides?.length > 0 &&
-            this?.slides?.[this?.activeIndex]
-          ) {
-            activeSlide = this.slides[this.activeIndex]
-          }
-
+          const activeSlide = this.slides[this.activeIndex]
           if (activeSlide) {
             ;(activeSlide as HTMLElement).style.transform = 'scale(1.3)'
             ;(activeSlide as HTMLElement).style.zIndex = '10'
