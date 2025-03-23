@@ -42,7 +42,7 @@ export default class ScoreCards extends Vue {
         clickable: true,
       },
       on: {
-        slideChange: function () {
+        slideChange: function (this: Swiper) {
           document.querySelectorAll('.swiper-slide').forEach((slide) => {
             ;(slide as HTMLElement).style.transform = 'scale(1)'
             ;(slide as HTMLElement).style.zIndex = '1'
