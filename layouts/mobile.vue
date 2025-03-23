@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="">
         <HeaderOracle />
         <div class="mobile">
             <Nuxt />
