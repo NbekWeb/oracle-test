@@ -469,12 +469,7 @@ export default class DashboardPage extends Vue {
       }
     }
   }
-  .text-red {
-    color: #ff5b5b;
-  }
-  .text-green {
-    color: #7eff61;
-  }
+
   .rotate-45 {
     transform: rotate(-45deg);
   }
@@ -485,4 +480,11 @@ export default class DashboardPage extends Vue {
     font-weight: 700;
   }
 }
+.text-red {
+  color: #ff5b5b;
+}
+.text-green {
+  color: #7eff61;
+}
+
 </style>

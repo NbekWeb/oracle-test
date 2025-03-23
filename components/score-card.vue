@@ -84,4 +84,11 @@ export default class ScoreCard extends Vue {
         }
       }
     }
+    .text-red {
+  color: #ff5b5b;
+}
+.text-green {
+  color: #7eff61;
+}
+
 </style>
