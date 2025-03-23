@@ -247,6 +247,8 @@ export default class ProfileMine extends Vue {
     height: 44px;
     background: transparent;
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
     font-family: 'Hanson';
     font-size: 12px;
