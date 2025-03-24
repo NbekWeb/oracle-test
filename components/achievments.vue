@@ -2,12 +2,12 @@
   <div class="achievments-cards">
     <div class="swiper-container" ref="swiper">
       <div class="swiper-wrapper">
-        <div v-for="n in 5" :key="n" class="swiper-slide">
+        <button v-for="n in 5" :key="n" class="swiper-slide">
           <div class="slide-content">
             <img src="@/assets/svg/hex.svg" />
             <span>?</span>
           </div>
-        </div>
+        </button>
       </div>
     </div>
     <div class="swiper-pagination"></div>
@@ -59,15 +59,20 @@ export default class Slider extends Vue {
     background: #1d1d2966;
     border-radius: 12px;
     .swiper-wrapper {
-      .slide-content {
-        position: relative;
-        span {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          padding-right: 5px;
-          padding-bottom: 5px;
+      .swiper-slide {
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        .slide-content {
+          position: relative;
+          span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding-right: 5px;
+            padding-bottom: 5px;
+          }
         }
       }
     }

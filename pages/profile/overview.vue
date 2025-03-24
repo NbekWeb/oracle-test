@@ -17,7 +17,7 @@
       <img :src="getImagePath('telegram')" />
       @tgname</a
     >
-    <div class="btn-oracle">
+    <button class="btn-oracle">
       <div class="context">
         <span class="oracle">ORACLE</span>
         <span> Verified </span>
@@ -26,11 +26,11 @@
         <img :src="getImagePath('arrow-black')" />
       </div>
       <img src="@/assets/png/step-bg.png" class="step-bg" />
-    </div>
-    <div class="btn-msg">
+    </button>
+    <button class="btn-msg">
       <img :src="getImagePath('msg')" />
       Open chat
-    </div>
+    </button>
     <div class="offers-wrap">
       <button class="btn">Offer Escrow Deal</button>
       <button class="btn">Quick Transfer</button>
@@ -184,6 +184,8 @@ export default class ProfileOverview extends Vue {
   }
   .btn-oracle {
     margin-bottom: 20px;
+    color: #fff;
+    font-family: 'Hanson';
     width: 100%;
     height: 60px;
     display: flex;
@@ -235,6 +237,7 @@ export default class ProfileOverview extends Vue {
   }
   .btn-msg {
     margin-bottom: 20px;
+    color: #fff;
     width: 100%;
     height: 44px;
     display: flex;
@@ -245,6 +248,8 @@ export default class ProfileOverview extends Vue {
     font-weight: 700;
     font-size: 14px;
     border-radius: 12px;
+    font-family: 'Hanson';
+
     img {
       width: 22px;
       height: auto;

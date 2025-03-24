@@ -20,7 +20,7 @@
       link your telegram account
       <img src="@/assets/svg/arrow-right.svg" />
     </button>
-    <div class="btn-oracle">
+    <button class="btn-oracle">
       <div class="context">
         <span class="oracle">ORACLE</span>
         <span> Verified </span>
@@ -29,7 +29,7 @@
         <img :src="getImagePath('arrow-black')" />
       </div>
       <img src="@/assets/png/step-bg.png" class="step-bg" />
-    </div>
+    </button>
     <div class="networks-wrap">
       <div
         v-for="(network, i) of networks"
@@ -280,6 +280,8 @@ export default class ProfileMine extends Vue {
     z-index: 1;
     background: #e95548;
     border-radius: 12px;
+    border:none;
+    box-shadow: none;
     .context {
       display: flex;
       align-items: center;
