@@ -10,10 +10,15 @@
     </div>
     <div>
       <review-tab />
+      <review-card :review="{ status: 'like', type: 'mine' }" />
       <review-card
-        v-for="i in 6"
+        v-for="i in 5"
         :key="i"
-        :review="{ status: i % 2 != 0 ? 'like' : 'dislike', type: 'unknown' }"
+        :review="{
+          status: i % 2 != 0 ? 'like' : 'dislike',
+          type: 'mine',
+          answerEmpty: true,
+        }"
       />
     </div>
   </div>
@@ -24,7 +29,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
 @Component({
   components: {},
 })
-export default class unknownPage extends Vue {
+export default class mineREviewPage extends Vue {
   getImagePath(icon: string) {
     return require(`@/assets/svg/${icon}.svg`)
   }

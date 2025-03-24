@@ -29,7 +29,14 @@
         <p class="">Lorem ipsum dolor sit amet consectetur ad</p>
       </div>
     </div>
-    <div class="answer-review">
+    <div
+      v-if="review.type == 'mine' && review.answerEmpty"
+      class="write-answer"
+      @click="toggleOpen"
+    >
+      Write an answer
+    </div>
+    <div v-if="!review.answerEmpty" class="answer-review">
       <div class="">
         <img src="@/assets/png/man.png" class="user-img" />
         <span> @username </span>
@@ -38,13 +45,16 @@
           class="forward"
           @click="toggleOpen"
         />
+        <div v-if="review.type == 'mine'" class="pen">
+          <img src="@/assets/svg/pen.svg" @click="toggleOpen" />
+        </div>
       </div>
       <p :class="['limit2', { 'show-full': isExpanded }]">
         Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
         Aliquam in hendrerit urna. Aliquam in hendrerit urna. Aliquam in
         hendrerit urna.
       </p>
-      <template v-if="review.type">
+      <template v-if="review.type == 'unknown'">
         <span class="view-more" @click="toggleExpand">
           {{ isExpanded ? 'Hide' : 'View more' }}
           <img
@@ -87,9 +97,10 @@ export default class ReviewCard extends Vue {
     default: () => ({
       status: '',
       type: '',
+      answerEmpty: false,
     }),
   })
-  readonly review!: { status: string; type: string }
+  readonly review!: { status: string; type: string; answerEmpty: boolean }
 
   isExpanded = false
   open = false
@@ -178,6 +189,14 @@ export default class ReviewCard extends Vue {
       .forward {
         width: 15px;
         height: auto;
+      }
+      .pen {
+        display: flex;
+        flex-grow: 1;
+        justify-content: end;
+        img {
+          width: 16px;
+        }
       }
     }
   }
@@ -279,6 +298,14 @@ export default class ReviewCard extends Vue {
         }
       }
     }
+  }
+  .write-answer {
+    text-align: end;
+    margin-top: -5px;
+    font-size: 12px;
+    font-family: 'Evolventa';
+    font-weight: 700;
+    color: #f64e2a;
   }
 }
 </style>
