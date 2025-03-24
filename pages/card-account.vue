@@ -28,23 +28,26 @@
     </div>
     <score-card :score="score" />
     <div class="wrap-crypto">
-      <div v-for="(crypto, i) of cryptos" :key="i" class="crypto-card">
+      <button v-for="(crypto, i) of cryptos" :key="i" class="crypto-card">
         <div class="main-card">
           <span class="blur"></span>
           <img :src="getImagePath(crypto.img)" />
           <h4>{{ crypto.title }}</h4>
         </div>
         <span>{{ crypto.subtitle }}</span>
-      </div>
+      </button>
     </div>
-    <img src="@/assets/png/crypto-banner.png" class="crypto-banner" />
+    <button class="crypto-banner">
+      <img src="@/assets/png/crypto-banner.png" />
+    </button>
+
     <div class="wrap-detail">
       <h3>Details</h3>
       <div class="detail-cards">
-        <div v-for="(detail, i) of details" :key="i">
+        <button v-for="(detail, i) of details" :key="i">
           <span> {{ detail }} </span>
           <img :src="getImagePath('chevron')" />
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -217,8 +220,17 @@ export default class CardAccount extends Vue {
       flex-direction: column;
       align-items: center;
       gap: 8px;
-      font-family: 'Kenyan Coffee';
-      font-size: 12px;
+      span {
+        font-family: 'Kenyan Coffee';
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: none;
+      }
+      border: none;
+      box-shadow: none;
+      background: none;
+      color: #fff;
+      height: auto;
       .main-card {
         width: 100%;
         height: 120px;
@@ -235,6 +247,7 @@ export default class CardAccount extends Vue {
           height: 60px;
         }
         h4 {
+          font-family: 'Kenyan Coffee';
           font-size: 20px;
         }
 
@@ -255,6 +268,13 @@ export default class CardAccount extends Vue {
     width: 100%;
     height: auto;
     margin-bottom: 32px;
+    border: none;
+    box-shadow: none;
+    background: none;
+    border-radius: none;
+    img {
+      width: 100%;
+    }
   }
   .wrap-detail {
     font-family: 'Hanson';
@@ -268,7 +288,7 @@ export default class CardAccount extends Vue {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      div {
+      button {
         background: #1d1d2966;
         border-radius: 10px;
         height: 48px;
@@ -277,6 +297,8 @@ export default class CardAccount extends Vue {
         justify-content: space-between;
         padding: 0 12px;
         font-size: 16px;
+        border:none;
+        box-shadow: none;
         img {
           width: 24px;
           height: auto;

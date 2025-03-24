@@ -162,6 +162,8 @@ export default class ReviewCard extends Vue {
           display: flex;
           align-items: center;
           gap: 6px;
+          font-family: 'Hanson';
+          font-weight: 700;
           .stars-wrap {
             display: flex;
             gap: 0;
@@ -181,6 +183,7 @@ export default class ReviewCard extends Vue {
       font-size: 12px;
       text-transform: uppercase;
       font-weight: 700;
+      font-family: 'Hanson';
       .user-img {
         width: 24px;
         height: 24px;
