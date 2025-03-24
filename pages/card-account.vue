@@ -191,6 +191,7 @@ export default class CardAccount extends Vue {
       padding: 10px;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 6px;
       background: #1d1d29;
       color: #fff;
