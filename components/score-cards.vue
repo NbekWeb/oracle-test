@@ -39,10 +39,9 @@ export default class ScoreCards extends Vue {
       on: {
         slideChange: function (this: Swiper) {
           document.querySelectorAll('.swiper-slide').forEach((slide) => {
-            const img = slide.querySelector('.slide-img') as HTMLElement | null
-            slide.style.transform = 'scale(1)'
-            slide.style.zIndex = '1'
-            if (img) img.style.borderColor = 'transparent'
+            const slideElement = slide as HTMLElement
+            slideElement.style.transform = 'scale(1)'
+            slideElement.style.zIndex = '1'
           })
 
           const activeSlide = this.slides[this.activeIndex] as HTMLElement
