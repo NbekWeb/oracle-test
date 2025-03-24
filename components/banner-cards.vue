@@ -4,9 +4,9 @@
       <span></span>
       <img src="@/assets/svg/add.svg" />
     </div>
-    <button v-for="(card, i) of cards" :key="i" class="card-img">
+    <nuxt-link v-for="(card, i) of cards" :key="i" class="card-img" to="/">
       <img :src="getImagePath(card)" />
-    </button>
+    </nuxt-link>
   </div>
 </template>
 <script lang="ts">
@@ -39,10 +39,6 @@ export default class BannerCards extends Vue {
     width: 125px;
     min-width: 125px;
     height: 100%;
-    border: none;
-    background: transparent;
-    padding: 0;
-    box-shadow: none;
     img {
       width: 100%;
     }
