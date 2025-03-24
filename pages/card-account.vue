@@ -76,6 +76,7 @@ export default class CardAccount extends Vue {
     textRed: '$70,923',
     contextBottom: 'Your Deposits MTD: ',
     textGreen: '$105,921',
+    to: '/card-account',
   }
 
   details = ['Limits', 'Fees', 'history']

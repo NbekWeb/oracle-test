@@ -1,5 +1,5 @@
 <template>
-  <div class="score-card">
+  <nuxt-link :to="score.to" class="score-card">
     <img :src="getImagePng(score.img)" alt="Score Image" />
     <div class="score-context">
       <span class="score-title">{{ score.title }}</span>
@@ -14,7 +14,7 @@
         </span>
       </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script lang="ts">
@@ -33,6 +33,7 @@ export default class ScoreCard extends Vue {
       textRed: '',
       contextBottom: '',
       textGreen: '',
+      to: '/',
     }),
   })
   readonly score!: {
@@ -42,6 +43,7 @@ export default class ScoreCard extends Vue {
     textRed: string
     contextBottom: string
     textGreen: string
+    to: string
   }
 
   getImagePng(img: string) {
@@ -52,43 +54,44 @@ export default class ScoreCard extends Vue {
 
 <style scoped lang="scss">
 .score-card {
-      width: 100%;
-      height: 100px;
-      padding: 12px;
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: #1d1d2966;
+  border-radius: 12px;
+  color: #fff;
+  img {
+    width: 76px;
+    height: auto;
+  }
+  .score-context {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .score-title {
+      font-weight: 700;
+      font-family: 'Hanson';
+      font-size: 15px;
+    }
+    div {
       display: flex;
-      gap: 16px;
-      align-items: center;
-      background: #1d1d2966;
-      border-radius: 12px;
-      img {
-        width: 76px;
-        height: auto;
-      }
-      .score-context {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        .score-title {
-          font-weight: 700;
-          font-family: 'Hanson';
-          font-size: 15px;
-        }
-        div {
-          display: flex;
-          flex-direction: column;
-          span {
-            font-family: 'Reza Zulmi Alfaizi Sans';
-            font-size: 14px;
-            line-height: 160%;
-          }
-        }
+      flex-direction: column;
+      align-items: start;
+      span {
+        font-family: 'Reza Zulmi Alfaizi Sans';
+        font-size: 14px;
+        line-height: 160%;
       }
     }
-    .text-red {
+  }
+}
+.text-red {
   color: #ff5b5b;
 }
 .text-green {
   color: #7eff61;
 }
-
 </style>

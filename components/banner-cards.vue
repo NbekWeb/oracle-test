@@ -1,21 +1,20 @@
 <template>
   <div class="banner-cards tr-scrollbar">
-    <div v-if="type" class="adding" >
+    <div v-if="type" class="adding">
       <span></span>
       <img src="@/assets/svg/add.svg" />
     </div>
-    <img v-for="(card, i) of cards" :key="i" :src="getImagePath(card)" />
+    <nuxt-link v-for="(card, i) of cards" :key="i" to="/" class="card-img">
+      <img :src="getImagePath(card)" />
+    </nuxt-link>
   </div>
 </template>
 <script lang="ts">
-import { Component, Vue,Prop  } from 'nuxt-property-decorator'
-
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
 @Component({
   components: {},
 })
-
-
 export default class BannerCards extends Vue {
   cards = ['card1', 'card2', 'card3', 'card4']
 
@@ -34,8 +33,12 @@ export default class BannerCards extends Vue {
   width: 100%;
   overflow-x: auto;
   gap: 10px;
-  img {
+  .card-img {
     width: 125px;
+    min-width: 125px;
+    img {
+      width: 100%;
+    }
   }
   .adding {
     display: flex;

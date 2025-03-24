@@ -7,12 +7,12 @@
       <btc-card v-for="i in 3" :key="i" />
     </div>
     <div class="dashboard-wrap-icons">
-      <div v-for="(icon, i) of icons" :key="i" class="card-icon">
+      <nuxt-link v-for="(icon, i) of icons" :key="i" to="/" class="card-icon">
         <div>
           <img :src="getImagePath(icon.icon)" />
         </div>
         <span>{{ icon.title }}</span>
-      </div>
+      </nuxt-link>
     </div>
     <button class="btn scan-btn">
       <img src="@/assets/svg/qr.svg" />
@@ -20,12 +20,16 @@
     </button>
     <div class="dashboard-wrap-scores">
       <score-card v-for="(score, i) of scores" :key="i" :score="score" />
-
     </div>
     <div class="">
       <h3 class="main-title">Your ACCOUNTS</h3>
       <div class="dashboard-wrap-accounts">
-        <div v-for="(account, i) of accounts" :key="i" class="account-card">
+        <nuxt-link
+          v-for="(account, i) of accounts"
+          :key="i"
+          class="account-card"
+          to="/"
+        >
           <img :src="getImagePath(account.img)" />
           <div class="main-context">
             <div>
@@ -34,20 +38,13 @@
             </div>
             <span class="account-num">{{ account.cardNum }}</span>
           </div>
-        </div>
+        </nuxt-link>
       </div>
     </div>
     <img src="@/assets/png/features.png" class="sub-banner" />
     <div>
       <h3 class="main-title">Prepaid cards</h3>
-      <div class="dashboard-wrap-cards">
-        <div v-for="i in 4" :key="i" class="card-num">
-          <div>
-            <img :src="getImagePath('cards')" />
-          </div>
-          <span>****2235</span>
-        </div>
-      </div>
+      <cards-slider />
     </div>
     <div>
       <h3 class="main-title">Oracle's Service</h3>
@@ -132,6 +129,7 @@ export default class DashboardPage extends Vue {
       textRed: '$70,923',
       contextBottom: 'Your Deposits MTD: ',
       textGreen: '$105,921',
+      to: '/card-account',
     },
     {
       img: 'monkey',
@@ -140,6 +138,7 @@ export default class DashboardPage extends Vue {
       textRed: '- 15',
       contextBottom: 'Points Gained: ',
       textGreen: '+ 15',
+      to: '/',
     },
   ]
 
@@ -225,6 +224,7 @@ export default class DashboardPage extends Vue {
       font-size: 14px;
       font-family: 'Kenyan Coffee';
       width: 52px;
+      color: #fff;
       div {
         width: 100%;
         display: flex;
@@ -263,7 +263,6 @@ export default class DashboardPage extends Vue {
     flex-direction: column;
     gap: 12px;
     margin-bottom: 32px;
-
   }
   &-accounts {
     margin-top: 16px;
@@ -277,6 +276,7 @@ export default class DashboardPage extends Vue {
       padding: 12px;
       border-radius: 12px;
       background: #1d1d2966;
+      color: #fff;
       img {
         height: 68px;
         width: auto;
@@ -486,5 +486,4 @@ export default class DashboardPage extends Vue {
 .text-green {
   color: #7eff61;
 }
-
 </style>
