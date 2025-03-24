@@ -298,6 +298,7 @@ export default class CardAccount extends Vue {
         justify-content: space-between;
         padding: 0 12px;
         font-size: 16px;
+        font-family: 'Hanson';
         border: none;
         box-shadow: none;
         img {
