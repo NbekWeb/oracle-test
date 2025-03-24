@@ -291,13 +291,14 @@ export default class CardAccount extends Vue {
       button {
         background: #1d1d2966;
         border-radius: 10px;
+        color: #fff;
         height: 48px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 0 12px;
         font-size: 16px;
-        border:none;
+        border: none;
         box-shadow: none;
         img {
           width: 24px;
