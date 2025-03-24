@@ -24,7 +24,6 @@
   gap: 12px;
   font-size: 12px;
   padding: 8px;
-  padding: 0;
   box-shadow: none;
   background: transparent;
   outline: none;
