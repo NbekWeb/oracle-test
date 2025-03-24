@@ -68,12 +68,17 @@
         </div>
       </div>
       <div class="review-cards">
-        <div v-for="(review, i) of reviews" :key="i" class="review-card">
+        <nuxt-link
+          v-for="(review, i) of reviews"
+          :key="i"
+          to="/"
+          class="review-card"
+        >
           <div class="">
             <img :src="getImagePath(review.icon)" />
           </div>
           <span>{{ review.title }}</span>
-        </div>
+        </nuxt-link>
       </div>
     </div>
     <button class="btn btn-logout">
@@ -151,6 +156,7 @@ export default class ProfileMine extends Vue {
     textRed: '- 15',
     contextBottom: 'Points Gained: ',
     textGreen: '+ 15',
+    to: '/',
   }
 
   reviews = [
@@ -248,7 +254,8 @@ export default class ProfileMine extends Vue {
     background: transparent;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 10px;
     gap: 10px;
     font-family: 'Hanson';
     font-size: 12px;
@@ -401,6 +408,7 @@ export default class ProfileMine extends Vue {
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
       .review-card {
+        color:#fff;
         display: flex;
         flex-direction: column;
         gap: 6px;

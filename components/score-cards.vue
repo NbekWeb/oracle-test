@@ -4,7 +4,7 @@
       <div ref="swiper" class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="num in 10" :key="num">
-            <img src="@/assets/png/score.png" />
+            <img src="@/assets/png/score.png" class="slide-img" />
             <h4>Sparkle monkey</h4>
             <span> Flashing your shine, swinging to the top. </span>
           </div>
@@ -16,10 +16,8 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import Swiper, { Autoplay } from 'swiper'
+import Swiper from 'swiper'
 import 'swiper/swiper-bundle.min.css'
-
-Swiper.use([Autoplay])
 
 @Component
 export default class ScoreCards extends Vue {
@@ -29,10 +27,7 @@ export default class ScoreCards extends Vue {
       spaceBetween: 40,
       loop: true,
       centeredSlides: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
+
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -44,13 +39,18 @@ export default class ScoreCards extends Vue {
       on: {
         slideChange: function (this: Swiper) {
           document.querySelectorAll('.swiper-slide').forEach((slide) => {
-            ;(slide as HTMLElement).style.transform = 'scale(1)'
-            ;(slide as HTMLElement).style.zIndex = '1'
+            const img = slide.querySelector('.slide-img') as HTMLElement
+            slide.style.transform = 'scale(1)'
+            slide.style.zIndex = '1'
+            if (img) img.style.borderColor = 'transparent'
           })
+
           const activeSlide = this.slides[this.activeIndex]
           if (activeSlide) {
-            ;(activeSlide as HTMLElement).style.transform = 'scale(1.3)'
-            ;(activeSlide as HTMLElement).style.zIndex = '10'
+            const img = activeSlide.querySelector('.slide-img') as HTMLElement
+            activeSlide.style.transform = 'scale(1.3)'
+            activeSlide.style.zIndex = '10'
+            if (img) img.style.borderColor = '#F64E2A'
           }
         },
       },
@@ -100,6 +100,8 @@ export default class ScoreCards extends Vue {
   img {
     width: 100%;
     height: auto;
+    border: 1px solid transparent;
+    border-radius: 12px;
   }
   h4 {
     font-size: 20px;

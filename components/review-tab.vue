@@ -13,14 +13,26 @@
 
     <div class="tab-content">
       <div class="like-wrap">
-        <div>
+        <div
+          :class="filter == 'like' && 'bg-orange'"
+          @click="changeFilter('like')"
+        >
           <img src="@/assets/svg/like.svg" />
         </div>
 
-        <div>
+        <div
+          :class="filter == 'dislike' && 'bg-orange'"
+          @click="changeFilter('dislike')"
+        >
           <img src="@/assets/svg/like.svg" class="dislike" />
         </div>
-        <div class="all">All</div>
+        <div
+          class="all"
+          :class="filter == 'all' && 'bg-orange'"
+          @click="changeFilter('all')"
+        >
+          All
+        </div>
       </div>
     </div>
   </div>
@@ -35,6 +47,11 @@ export default class reviewTab extends Vue {
   tabs = [{ label: 'Excange' }, { label: 'P2P' }, { label: 'SHOPS' }]
 
   activeTab = 0
+  filter = 'all'
+
+  changeFilter(val: string) {
+    this.filter = val
+  }
 }
 </script>
 <style scoped lang="scss">
@@ -87,8 +104,6 @@ export default class reviewTab extends Vue {
           cursor: pointer;
         }
         &.all {
-          border-radius: 8px;
-          background: #f64e2a;
           height: 100%;
           width: 100%;
 
@@ -105,6 +120,10 @@ export default class reviewTab extends Vue {
         }
       }
     }
+  }
+  .bg-orange {
+    border-radius: 8px;
+    background: #f64e2a !important;
   }
 }
 </style>

@@ -29,13 +29,16 @@ export default class BannerCards extends Vue {
 <style scoped lang="scss">
 .banner-cards {
   display: flex;
-  height: 158px;
+  height: auto;
+  min-height: 150px;
   width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
   gap: 10px;
   .card-img {
     width: 125px;
     min-width: 125px;
+    height: 100%;
     img {
       width: 100%;
     }
@@ -46,6 +49,8 @@ export default class BannerCards extends Vue {
     justify-content: center;
     width: 125px;
     min-width: 125px;
+    height: 150px;
+    min-height: 150px;
     border: 1px solid transparent;
     background: linear-gradient(#121119, #121119) padding-box,
       linear-gradient(144.97deg, #f64e2a 0%, #232130 42.16%) border-box;

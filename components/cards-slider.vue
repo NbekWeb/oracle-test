@@ -49,6 +49,8 @@ export default class CardsSlider extends Vue {
   margin-top: 16px;
   margin-bottom: 32px;
   width: 100%;
+  position: relative;
+  z-index: -1;
   .card-num {
     display: flex;
     flex-direction: column;

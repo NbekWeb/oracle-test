@@ -12,8 +12,8 @@
     <div class="info-wrap">
       <span> btc9104391491309490134013094913094 </span>
       <img src="@/assets/svg/Refresh.svg" />
-      <img src="@/assets/svg/Copy.svg" />
-      <img src="@/assets/svg/forward.svg" />
+      <img src="@/assets/svg/Copy.svg" @click="copyAddress" />
+      <img src="@/assets/svg/forward.svg" @click="shareAddress" />
     </div>
     <p class="title-send">Send only BTC coins on BTC network to this address</p>
     <div class="wrap-withdraw">
@@ -56,6 +56,8 @@ import { Component, Vue } from 'nuxt-property-decorator'
   components: {},
 })
 export default class CardAccount extends Vue {
+  btcAddress = 'btc9104391491309490134013094913094'
+
   cryptos = [
     {
       img: 'two-arrow',
@@ -83,6 +85,19 @@ export default class CardAccount extends Vue {
 
   getImagePath(icon: string) {
     return require(`@/assets/svg/${icon}.svg`)
+  }
+
+  copyAddress() {
+    navigator.clipboard.writeText(this.btcAddress)
+  }
+
+  shareAddress() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'BTC Address',
+        text: `Send BTC to this address: ${this.btcAddress}`,
+      })
+    }
   }
 
   layout() {
@@ -170,6 +185,7 @@ export default class CardAccount extends Vue {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
     margin-bottom: 32px;
+
     .btn {
       height: 40px;
       padding: 10px;
@@ -179,6 +195,7 @@ export default class CardAccount extends Vue {
       background: #1d1d29;
       color: #fff;
       font-family: 'Reza Zulmi Alfaizi Sans';
+      font-size: 12px;
       img {
         height: 20px;
         width: auto;

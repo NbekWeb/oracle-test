@@ -89,6 +89,7 @@ export default class ProfileOverview extends Vue {
     textRed: '- 15',
     contextBottom: 'Points Gained: ',
     textGreen: '+ 15',
+    to: '/',
   }
 
   layout() {
