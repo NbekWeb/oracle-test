@@ -15,7 +15,9 @@
 
 <style scoped lang="scss">
 .btc-card {
+  color: #fff;
   display: flex;
+  align-items: center;
   text-align: start;
   height: 74px;
   min-width: 190px;
