@@ -2,12 +2,12 @@
   <div class="dashboard-wrap-cards">
     <div ref="swiper" class="swiper">
       <div class="swiper-wrapper">
-        <div v-for="i in 5" :key="i" class="swiper-slide card-num">
+        <button v-for="i in 5" :key="i" class="swiper-slide card-num">
           <div>
             <img :src="getImagePath('cards')" />
           </div>
           <span>****2235</span>
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -56,6 +56,11 @@ export default class CardsSlider extends Vue {
     flex-direction: column;
     align-items: center;
     gap: 6px;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    background: transparent;
+    outline: none;
     div {
       height: 60px;
       width: 80px;

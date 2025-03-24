@@ -1,5 +1,5 @@
 <template>
-  <div class="btc-card">
+  <button class="btc-card">
     <div class="btc-card-icon">
       <div class="">
         <img src="@/assets/svg/btc.svg" />
@@ -10,16 +10,22 @@
       <span class="context-price">1.000.000$</span>
       <span class="context-date">21.04, 15:21</span>
     </div>
-  </div>
+  </button>
 </template>
 
 <style scoped lang="scss">
 .btc-card {
   display: flex;
+  text-align: start;
   height: 74px;
   min-width: 190px;
   gap: 12px;
+  font-size: 12px;
   padding: 8px;
+  padding: 0;
+  box-shadow: none;
+  background: transparent;
+  outline: none;
   border: 1px solid #18171c;
   border-radius: 12px;
   font-family: 'Reza Zulmi Alfaizi Sans';
@@ -48,17 +54,17 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-    font-size: 12px;
-    line-height: 14px;
 
     .context-title {
       font-weight: 700;
+      font-size: 12px;
       font-family: 'Hanson';
     }
     .context-price {
       font-size: 14px;
     }
     .context-date {
+      font-size: 12px;
       opacity: 0.6;
     }
   }
