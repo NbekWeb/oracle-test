@@ -436,6 +436,7 @@ export default class ProfileMine extends Vue {
   .btn-logout {
     margin-bottom: 20px;
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     gap: 10px;
