@@ -56,7 +56,7 @@
       </template>
     </div>
     <div class="comment-open" :class="open && 'open'" @click="closeOpen">
-      <div class="comment-wrap">
+      <div class="comment-wrap" @click.stop>
         <div class="comment-content">
           <div class="comment-content-top">
             <div>
