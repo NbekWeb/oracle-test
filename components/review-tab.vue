@@ -22,52 +22,20 @@
         </div>
         <div class="all">All</div>
       </div>
-      <div v-for="i in 2" :key="i" class="review-card">
-        <div class="main-review">
-          <img src="@/assets/png/man.png" class="user-img" />
-          <div class="main-review-content">
-            <div class="main-review-content-top">
-              <span>@username</span>
-              <div>
-                <span> 20.12.24 </span>
-                <img v-if="i % 2 == 1" src="@/assets/svg/like-green.svg" />
-                <img v-else src="@/assets/svg/like-red.svg" />
-              </div>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur ad</p>
-          </div>
-        </div>
-        <div class="answer-review">
-          <div class="">
-            <img src="@/assets/png/man.png" class="user-img" />
-            <span> @username </span>
-            <img src="@/assets/svg/forward-white.svg" class="forward" />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-            mi. Aliquam in hendrerit urna.
-          </p>
-        </div>
-      </div>
     </div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { Component, Vue } from 'nuxt-property-decorator'
 
-export default defineComponent({
-  setup() {
-    const tabs = ref([
-      { label: 'Excange' },
-      { label: 'P2P' },
-      { label: 'SHOPS' },
-    ])
-
-    const activeTab = ref(0)
-
-    return { tabs, activeTab }
-  },
+@Component({
+  components: {},
 })
+export default class reviewTab extends Vue {
+  tabs = [{ label: 'Excange' }, { label: 'P2P' }, { label: 'SHOPS' }]
+
+  activeTab = 0
+}
 </script>
 <style scoped lang="scss">
 .review {
@@ -134,69 +102,6 @@ export default defineComponent({
         }
         .dislike {
           transform: rotate(-180deg);
-        }
-      }
-    }
-    .review-card {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      border-bottom: 1px solid #15131f;
-      padding: 12px 0;
-      p {
-        font-family: 'Reza Zulmi Alfaizi Sans';
-        font-size: 14px;
-      }
-      .main-review {
-        display: flex;
-        gap: 10px;
-        .user-img {
-          width: 50px;
-          height: 50px;
-        }
-        &-content {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          &-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 12px;
-            text-transform: uppercase;
-            div {
-              display: flex;
-              align-items: center;
-              gap: 6px;
-
-              span {
-                font-family: 'Reza Zulmi Alfaizi Sans';
-                color: #ffffff66;
-              }
-            }
-          }
-        }
-      }
-      .answer-review {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        div {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          font-size: 12px;
-          text-transform: uppercase;
-          font-weight: 700;
-          .user-img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-          }
-          .forward {
-            width: 15px;
-            height: auto;
-          }
         }
       }
     }

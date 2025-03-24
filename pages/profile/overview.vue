@@ -57,7 +57,17 @@
           </div>
         </div>
       </div>
-      <review-tab />
+      <div>
+        <review-tab />
+        <template v-for="i in 2">
+          <review-card
+            :key="i"
+            :review="{
+              status: i % 2 != 0 ? 'like' : 'dislike',
+            }"
+          />
+        </template>
+      </div>
     </div>
   </div>
 </template>

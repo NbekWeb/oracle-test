@@ -84,7 +84,7 @@
     <div class="modal" :class="open && 'open'" @click="closeModal">
       <div class="modal-content" @click.stop>
         <h3 class="main-title">link telegram</h3>
-        <span class="close">
+        <span class="close" @click="toggleOpen">
           <img :src="getImagePath('x')" />
         </span>
         <form>
