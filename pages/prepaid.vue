@@ -543,9 +543,11 @@ export default class PrepaidPage extends Vue {
         flex-direction: column;
         gap: 10px;
         font-size: 16px;
+
         margin-top: 16px;
         margin-bottom: 30px;
         div {
+          height: 48px;
           width: 100%;
           border-radius: 10px;
           background: #1d1d2966;
