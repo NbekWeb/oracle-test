@@ -1,6 +1,6 @@
 <template>
   <div class="achievments-cards">
-    <div class="swiper-container" ref="swiper">
+    <div ref="swiper" class="swiper-container">
       <div class="swiper-wrapper">
         <button v-for="n in 5" :key="n" class="swiper-slide">
           <div class="slide-content">
@@ -31,10 +31,6 @@ export default class Slider extends Vue {
       autoplay: {
         delay: 30000,
         disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
       },
       pagination: {
         el: '.swiper-pagination',

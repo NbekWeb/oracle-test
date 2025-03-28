@@ -16,7 +16,6 @@
             <img :src="getImagePath(rule.icon)" />
             <span>
               {{ rule.title }}
-              {{ open }}
             </span>
           </div>
         </template>
@@ -128,6 +127,33 @@
       </div>
     </template>
 
+    <div class="withdraw" :class="open == 'withdraw' && 'open'" @click="close">
+      <div class="withdraw-content" @click.stop>
+        <span class="close-line" @click="close"></span>
+        <div class="cancel-btn" @click="close">Cancel</div>
+        <div class="withdraw-content-forms">
+          <form class="withdraw-content-forms-usdt">
+            <div>
+              <span>$</span>
+              <input v-model="amountUsd" />
+            </div>
+
+            <img :src="getImagePath('usdt-round')" />
+          </form>
+          <img :src="getImagePath('equal')" class="equal-img" />
+          <form class="withdraw-content-forms-usdt">
+            <div>
+              <input v-model="amountBtc" readonly />
+            </div>
+
+            <img :src="getImagePath('bit')" />
+          </form>
+        </div>
+        <transfer-accounts />
+        <button class="withdraw-btn">WITHDRAW ALL</button>
+      </div>
+    </div>
+
     <navigation-bottom />
   </div>
 </template>
@@ -165,6 +191,8 @@ export default class PrepaidPage extends Vue {
   }
 
   amount = '100'
+  amountUsd = '52.12'
+  amountBtc = '0.5 Btc'
 
   get amountValue() {
     return this.amount.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
@@ -209,6 +237,8 @@ export default class PrepaidPage extends Vue {
   button {
     height: 48px;
     width: 100%;
+    font-family: 'Hanson';
+    font-weight: 700;
   }
   padding-bottom: 70px;
   font-family: 'Reza Zulmi Alfaizi Sans';
@@ -611,6 +641,91 @@ export default class PrepaidPage extends Vue {
         .cancel {
           background: transparent;
         }
+      }
+    }
+  }
+  .withdraw {
+    position: fixed;
+    z-index: 100;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: end;
+    background: #00000099;
+    &.open {
+      display: flex;
+    }
+    &-content {
+      border-radius: 8px 8px 0 0;
+      height: calc(100% - 88px);
+      background: #121119;
+      width: 100%;
+      padding: 14px 12px;
+      .close-line {
+        display: flex;
+        margin: 0 auto;
+        height: 6px;
+        width: 52px;
+        border-radius: 4px;
+        background: #2a2937;
+      }
+      .cancel-btn {
+        margin: 24px 0;
+        color: #f64e2a;
+        font-size: 14px;
+        font-family: 'Evolventa';
+      }
+      &-forms {
+        padding: 8px;
+        border-radius: 12px;
+        background: #15151f;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        form {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 42px;
+          background: #262633;
+          border-radius: 8px;
+          padding: 0 14px;
+          img {
+            width: 24px;
+          }
+          div {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+
+            input,
+            span {
+              font-size: 16px;
+              font-family: 'Reza Zulmi Alfaizi Sans';
+            }
+            input {
+              background: transparent;
+              border: none;
+              outline: none;
+              color: #fff;
+              width: auto;
+              max-width: max-content;
+              min-width: 1ch;
+            }
+          }
+        }
+        .equal-img {
+          width: 14px;
+          margin: 0 auto;
+        }
+      }
+      .withdraw-btn {
+        font-size: 14px;
+        text-align: center;
+        background: #f64e2a;
+        color: #fff;
       }
     }
   }
