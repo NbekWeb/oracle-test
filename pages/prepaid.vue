@@ -121,7 +121,7 @@
             }}
           </p>
           <div class="wrap-btns">
-            <button class="btn" @click="close" >YES</button>
+            <button class="btn" @click="close">YES</button>
             <button class="cancel btn" @click="close">CanCel</button>
           </div>
         </div>
@@ -206,6 +206,9 @@ export default class PrepaidPage extends Vue {
 </script>
 <style scoped lang="scss">
 .prepaid-page {
+  button {
+    height: 48px;
+  }
   padding-bottom: 70px;
   font-family: 'Reza Zulmi Alfaizi Sans';
   .back-btn {
@@ -521,7 +524,6 @@ export default class PrepaidPage extends Vue {
     .btn-deposit {
       background: transparent;
       width: 100%;
-      height: 48px;
       font-size: 16px;
       font-family: 'Hanson';
       text-align: center;
@@ -542,7 +544,6 @@ export default class PrepaidPage extends Vue {
         margin-bottom: 30px;
         div {
           width: 100%;
-          height: 48px;
           border-radius: 10px;
           background: #1d1d2966;
           display: flex;
@@ -557,7 +558,7 @@ export default class PrepaidPage extends Vue {
       .btn-issue {
         background: #f64e2a;
         text-align: center;
-        height: 48px;
+
         font-family: 'Hanson';
         font-weight: 700;
       }
