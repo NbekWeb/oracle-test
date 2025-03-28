@@ -168,7 +168,7 @@
         </div>
         <div class="withdraw-success-content-btc">0.5 BTC</div>
         <div class="withdraw-success-content-card">
-          <button>***2235</button>
+          <span class="btn-number">***2235</span>
           <img :src="getImagePath('withdrow-round')" class="withdraw-round" />
           <div class="">
             <span> 52.12 $ </span>

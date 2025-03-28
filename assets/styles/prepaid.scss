@@ -580,6 +580,7 @@
     width: 100%;
     display: none;
     align-items: center;
+
     &.open {
       display: flex;
     }
@@ -616,7 +617,10 @@
         background: #21212D;
         border-radius: 8px;
 
-        button {
+        .btn-number {
+          display: flex;
+          justify-content: center;
+          width: 100%;
           height: 50px;
           background: linear-gradient(92.86deg, #f64e2a 7.66%, #d80027 72.69%);
           border: none;
