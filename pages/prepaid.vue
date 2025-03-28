@@ -1,6 +1,6 @@
 <template>
   <div class="prepaid-page">
-    <button class="back-btn">
+    <button class="back-btn btn">
       <img src="@/assets/svg/arrow-back.svg" />
     </button>
     <banner-cards />
@@ -86,7 +86,7 @@
             <img :src="getImagePath('left-arrow')" class="right" />
           </button>
         </div>
-        <button class="btn-deposit">DEPOSIT</button>
+        <button class="btn-deposit btn">DEPOSIT</button>
         <div class="wrap-details">
           <h2>Details</h2>
           <div class="wrap-details-card">
@@ -99,7 +99,7 @@
               <img :src="getImagePath('chevron')" />
             </div>
           </div>
-          <button class="btn-issue">ISSUE A NEW CARD</button>
+          <button class="btn-issue btn">ISSUE A NEW CARD</button>
         </div>
       </div>
     </div>
@@ -121,8 +121,8 @@
             }}
           </p>
           <div class="wrap-btns">
-            <button @click="close">YES</button>
-            <button class="cancel" @click="close">CanCel</button>
+            <button class="btn" @click="close" >YES</button>
+            <button class="cancel btn" @click="close">CanCel</button>
           </div>
         </div>
       </div>
