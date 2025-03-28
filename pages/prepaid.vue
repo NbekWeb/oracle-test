@@ -267,6 +267,8 @@ export default class PrepaidPage extends Vue {
     div {
       max-width: 80px;
       display: flex;
+      position: relative;
+      z-index: 1;
       flex-direction: column;
       align-items: center;
       gap: 8px;
