@@ -208,6 +208,7 @@ export default class PrepaidPage extends Vue {
 .prepaid-page {
   button {
     height: 48px;
+    width: 100%;
   }
   padding-bottom: 70px;
   font-family: 'Reza Zulmi Alfaizi Sans';
